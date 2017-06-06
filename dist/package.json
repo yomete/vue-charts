@@ -1,0 +1,10 @@
+{
+  "name": "vue-charts",
+  "version": "1.0.0",
+  "description": "vue-charts",
+  "author": "Yomi Eluwande",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm install express"
+  }
+}
