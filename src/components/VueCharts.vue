@@ -1,5 +1,11 @@
 <template>
   <section class="container">
+    <ul>
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/chartjs">vue-chartjs</router-link></li>
+      <li><router-link to="/charts">vue-charts</router-link></li>
+      <li><router-link to="/chartkick">vue-chartkick</router-link></li>
+    </ul>
     <h1>Demo examples of vue-charts</h1>
     <div class="columns">
       <div class="column">
@@ -13,13 +19,16 @@
     </div>
     <div class="columns">
       <div class="column">
-        <h3>Radra Chart</h3>
+        <h3>Radar Chart</h3>
         <chartjs-radar></chartjs-radar>
       </div>
       <div class="column">
         <h3>Data Binding Line Chart</h3>
-        <input v-on:keyup.enter="addData" placeholder="Add a Data" v-model="dataentry">
-        <input v-on:keyup.enter="addLabel" placeholder="Add a Label" v-model="datalabel">
+        <form @submit.prevent="addData">
+          <input placeholder="Add a Data" v-model="dataentry">
+          <input placeholder="Add a Label" v-model="datalabel">
+          <button type="submit">Submit</button>
+        </form>
         <chartjs-line :labels="labels" :data="dataset" :bind="true"></chartjs-line>
       </div>
     </div>
@@ -40,14 +49,26 @@
     methods: {
       addData () {
         this.dataset.push(this.dataentry)
-        this.dataentry = ''
-      },
-      addLabel () {
         this.labels.push(this.datalabel)
         this.datalabel = ''
+        this.dataentry = ''
       }
     }
   }
 </script>
 
-<style scoped></style>
+<style scoped>
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  a {
+    color: #42b983;
+  }
+</style>
