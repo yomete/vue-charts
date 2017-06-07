@@ -1,6 +1,6 @@
-# y
+# Vue Charts
 
-> A Vue.js project
+> Creating beautiful charts with Vue wrappers
 
 ## Build Setup
 
