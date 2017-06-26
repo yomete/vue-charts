@@ -3,6 +3,7 @@
     <div class="hero-body">
       <div class="container">
         <h1>Creating Beautiful Charts Using Vue.js Wrappers For Chart.js</h1>
+        <h2>A SitePoint Tutorial</h2>
         <ul>
           <li><router-link to="/chartjs">vue-chartjs</router-link></li>
           <li><router-link to="/charts">vue-charts</router-link></li>
